@@ -50,14 +50,17 @@ module.exports = {
         test: [/\.(svg|png|jpg|gif)$/],
         loader: 'file-loader',
         options: {
-          name: 'img/[name].[ext]'
+          name: 'dist/img/[name].[ext]'
         }
       },
       {
-        test: [/\.(ttf|eot|woff|woff2)$/],
+        test: [/\.(ttf|eot|woff|woff2|svg)$/],
         loader: 'file-loader',
         options: {
-          name: 'fonts/[name].[ext]'
+          useRelativePath: isDevelopment || false,
+          name: '[name].[ext]',
+          outputPath: 'dist/fonts/',
+          publicPath: '../fonts'
         }
       }
     ]
@@ -92,5 +95,6 @@ module.exports = {
     hot: true,
     inline:true,
     host: '0.0.0.0',
-  }
+  },
+  watch: true
 }
