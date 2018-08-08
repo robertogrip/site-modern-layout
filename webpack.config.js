@@ -47,10 +47,13 @@ module.exports = {
           })
       },
       {
-        test: [/\.(svg|png|jpg|gif)$/],
+        test: [/\.(svg|png|jpg|jpeg|gif)$/],
         loader: 'file-loader',
         options: {
-          name: 'dist/img/[name].[ext]'
+          useRelativePath: isDevelopment || false,
+          name: '[name].[ext]',
+          outputPath: 'dist/img/',
+          publicPath: '../img'
         }
       },
       {

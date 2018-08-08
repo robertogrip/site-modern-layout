@@ -3,11 +3,180 @@
 @import "~@fortawesome/fontawesome-free/scss/brands";
 @import "~@fortawesome/fontawesome-free/scss/regular";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "partials/settings";
 
 body {
     display: block;
     overflow-x: hidden;
     img {
         max-width: 100%;
+    }
+}
+
+body > header {
+    top: 0;
+    left: 0;
+    color: #fff;
+    z-index: 1049;
+    position: fixed;
+    padding: 20px 40px;
+    background: transparent;
+    
+    .header-menu {
+        margin: 0;
+        font-size: 0;
+        display: block;
+        list-style: none;
+    
+        li {
+            font-size: 16px;
+            display: inline-block;
+
+            &:nth-child(3) {
+                a {
+                    letter-spacing: 0.04px;
+                }
+            }
+            
+             a:not(.btn) {
+                color: #ddd;
+                display: block;
+                padding: 8px 0;
+                margin-right: 35px;
+                position: relative;
+                
+                &.active, &:hover {
+                    color: #fff;
+                    font-weight: 700;
+                    letter-spacing: 0;
+
+                    &::after {
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        content: '';
+                        height: 3px;
+                        display: block;
+                        background: #ddd;
+                        position: absolute;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.fixed-bar {
+        color: #167fe4;
+        box-shadow: 0 3px 8px rgba(0,0,0, .25);
+
+        .header-menu {
+            a:not(.btn) {
+                color: #3495ce;
+                &.active, &:hover {
+                    color: #1a80bb;
+                }
+            }
+        }
+    }
+}
+
+section {
+    &.banner-call-to-action {
+        color:#fff;
+        min-height: 100vh;
+        position: relative;
+        text-align: center;
+        background: url('../img/background.jpeg') no-repeat center / cover;
+        
+        .banner-mask {
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: .75;
+            height: 100%;
+            position: absolute;
+            background-image: linear-gradient(116deg, #29e2e5, #167fe4);
+        }
+
+        .banner-mask + div {
+            top: 50vh;
+            z-index: 1;
+            position: relative;
+            transform: translateY(-50%);
+        }
+
+        h2 {
+            font-size: 56px;
+            font-weight: 300;
+        }
+
+        p {
+            width: 100%;
+            padding: 0 15px;
+            font-size: 24px;
+            max-width: 780px;
+            margin: 15px auto 45px;
+        }
+    }
+
+    &.product-video {
+        padding: 65px 0 95px;
+
+        .video-container {
+            position: relative;
+            .video {
+                right: 0;
+                top: -200px;
+                width: 100%;
+                height: 530px;
+                max-width: 905px;
+                position: absolute;
+                background: #4a4a4a;
+                border: 25px solid #fff;
+            }
+
+            .video-topics {
+                z-index: 10;
+                width: 420px;
+                background: #fff;
+                position: relative;
+                border: 1px solid #e6e6e6;
+                box-shadow: 12px 23px 18px rgba(0, 0, 0, 0.15);
+
+                ul {
+                    list-style: none;
+                    padding: 35px 52px 35px 35px;
+
+                    li {
+                        margin: 20px 0;
+
+                        .number {
+                            color: #fff;
+                            width: 40px;
+                            height: 40px;
+                            font-size: 16px;
+                            overflow: hidden;
+                            line-height: 40px;
+                            margin-right: 10px;
+                            border-radius: 50%;
+                            text-align: center;
+                            background: #4a90e2; 
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+
+                        p {
+                            margin: 0;
+                            color: #808080;
+                            font-size: 16px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: calc(100% - 55px);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
