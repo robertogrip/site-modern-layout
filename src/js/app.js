@@ -7,9 +7,9 @@ import jQuery from 'jquery';
 const headerFunction = () => {
     const scrollTop = jQuery(window).scrollTop();
 
-    if( scrollTop > 100 && !jQuery('.conpass-header').hasClass('fixed-bar') ) {
+    if( scrollTop > 60 && !jQuery('.conpass-header').hasClass('fixed-bar') ) {
         jQuery('.conpass-header').addClass('fixed-bar');
-    } else if( scrollTop < 101 && jQuery('.conpass-header').hasClass('fixed-bar') ) {
+    } else if( scrollTop < 61 && jQuery('.conpass-header').hasClass('fixed-bar') ) {
         jQuery('.conpass-header').removeClass('fixed-bar');
     }
 

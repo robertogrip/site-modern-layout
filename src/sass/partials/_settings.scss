@@ -2,8 +2,17 @@
     font-family: 'Roboto', sans-serif;
 }
 
+ul, li {
+    list-style: none;
+}
+
 a, a:hover, a:active, a:focus, a:visited {
     text-decoration: none;
+}
+
+.btn.btn-primary {
+    border: none;
+    border-color: transparent;
 }
 
 .btn.btn-primary {
@@ -28,4 +37,10 @@ a, a:hover, a:active, a:focus, a:visited {
 .parallax-window {
     min-height: 400px;
     background: transparent !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    &.light {
+        font-weight: 300;
+    }
 }
