@@ -1,9 +1,86 @@
-@import "~bootstrap/scss/bootstrap";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "partials/settings";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a, a:hover, a:active, a:focus, a:visited {
+    text-decoration: none;
+}
+
+.btn.btn-primary {
+    border: none;
+    border-color: transparent;
+}
+
+.btn.btn-primary {
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #e75b05;
+    box-shadow: 1px 1px 10px rgba(0,0,0, .2);
+
+    &.btn-lg {
+        font-size: 16px;
+        padding: 12px 40px;
+    }
+
+    &:hover, &:active, &:focus, &:visited {
+        border-color: #ff6100;
+        box-shadow: 1px 3px 10px rgba(0,0,0, .3);
+    }
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    &.light {
+        font-weight: 300;
+    }
+}
 
 body {
     display: block;
@@ -87,7 +164,7 @@ section {
         min-height: 100vh;
         position: relative;
         text-align: center;
-        background: url('../img/background.jpeg') no-repeat center / cover;
+        background: url('../images/background.jpeg') no-repeat center / cover;
         
         .banner-mask {
             top: 0;

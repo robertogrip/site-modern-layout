@@ -1,5 +1,4 @@
-import '../sass/app.scss';
-import 'bootstrap';
+import 'styles/index.scss';
 import './vendor/parallax.min';
 
 import jQuery from 'jquery';

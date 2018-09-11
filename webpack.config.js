@@ -1,103 +1,103 @@
-const path = require('path')
-const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: __dirname + '/src/index.html',
-  filename: 'index.html',
-  inject: true
-})
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const prod = process.env.NODE_ENV === 'production'
-const isDevelopment = process.env.NODE_ENV === 'development'
-const ip = require('ip')
-const serverIp = ip.address()
+// Is the current build a development build
+const IS_DEV = (process.env.NODE_ENV === 'dev');
 
+const dirNode = 'node_modules';
+const dirApp = path.join(__dirname, 'app');
+const dirAssets = path.join(__dirname, 'assets');
+
+const appHtmlTitle = 'Conpass modern site';
+
+/**
+ * Webpack Configuration
+ */
 module.exports = {
-  cache: isDevelopment,
-  entry: './src/js/app.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: isDevelopment ? `http://${serverIp}:8080/` : ''
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        include: path.resolve(__dirname, "src"),
-        exclude: /node_modules/,
-        query: {
-        //   plugins: ['transform-runtime'],
-          presets: ['@babel/preset-env']
-        },
-      },
-      {
-        test: /\.scss$/,
-        use: prod
-          ? ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'resolve-url-loader', 'sass-loader']
-          })
-          : ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
-          })
-      },
-      {
-        test: [/\.(svg|png|jpg|jpeg|gif)$/],
-        loader: 'file-loader',
-        options: {
-          useRelativePath: isDevelopment || false,
-          name: '[name].[ext]',
-          outputPath: 'dist/img/',
-          publicPath: '../img'
-        }
-      },
-      {
-        test: [/\.(ttf|eot|woff|woff2|svg)$/],
-        loader: 'file-loader',
-        options: {
-          useRelativePath: isDevelopment || false,
-          name: '[name].[ext]',
-          outputPath: 'dist/fonts/',
-          publicPath: '../fonts'
-        }
-      }
-    ]
-  },
-  plugins: prod ? [
-    new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-      screw_ie8: true,
-      warnings: false
-      }
-    }),
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery'
-    }),
-    HTMLWebpackPluginConfig
-    ] : [
-    new webpack.DefinePlugin({'process.env.NODE_ENV': '"development"'}),
-    new DashboardPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery'
-    }),
-    new ExtractTextPlugin('dist/css/app.css'),
-    HTMLWebpackPluginConfig
+    entry: {
+        vendor: [
+            'lodash'
+        ],
+        bundle: path.join(dirApp, 'index')
+    },
+    resolve: {
+        modules: [
+            dirNode,
+            dirApp,
+            dirAssets
+        ]
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            IS_DEV: IS_DEV
+        }),
+
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'index.ejs'),
+            title: appHtmlTitle
+        }),
+
+        new webpack.ProvidePlugin({
+          jQuery: 'jquery',
+          $: 'jquery'
+        })
     ],
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    hot: true,
-    inline:true,
-    host: '0.0.0.0',
-  },
-  watch: true
-}
+    module: {
+        rules: [
+            // BABEL
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /(node_modules)/,
+                options: {
+                    compact: true
+                }
+            },
+
+            // STYLES
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: IS_DEV
+                        }
+                    },
+                ]
+            },
+
+            // CSS / SASS
+            {
+                test: /\.scss/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: IS_DEV
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: IS_DEV,
+                            includePaths: [dirAssets]
+                        }
+                    }
+                ]
+            },
+
+            // IMAGES
+            {
+                test: /\.(jpe?g|png|gif)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]'
+                }
+            }
+        ]
+    }
+};
