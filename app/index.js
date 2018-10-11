@@ -3,6 +3,10 @@ import './vendor/parallax.min';
 
 import jQuery from 'jquery';
 
+const showPage = () => {
+	jQuery('body').fadeIn();
+}
+
 const headerFunction = () => {
     const scrollTop = jQuery(window).scrollTop();
 
@@ -16,4 +20,17 @@ const headerFunction = () => {
 }
 
 headerFunction();
-jQuery(window).scroll(headerFunction);
+window.onload = showPage;
+window.onscroll = headerFunction;
+
+jQuery('[data-tab-for]').click(event => {
+	const dataId = jQuery(event.currentTarget).attr('data-tab-for') || '';
+
+	if( dataId ) {
+		jQuery('[data-tab-for]').removeClass('active');
+		jQuery(event.currentTarget).addClass('active');
+
+		jQuery('[data-tab-id]').removeClass('active');
+		jQuery(`[data-tab-id="${dataId}"]`).addClass('active');
+	}
+});

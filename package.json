@@ -1,17 +1,17 @@
 {
-  "name": "webpack-boilerplate",
-  "version": "4.0.0",
-  "description": "Plain webpack 4 Boilerplate with Babel, SASS and lodash on board",
-  "author": "Christoph von Gellhorn",
+  "name": "site-modern-layout",
+  "version": "1.0.0",
+  "description": "Conpass modern website",
+  "author": "ConpassOnboarding",
   "license": "MIT",
-  "homepage": "https://github.com/cvgellhorn/webpack-boilerplate",
+  "homepage": "https://github.com/robertogrip/site-modern-layout",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server -w --progress --mode development --config webpack.config.dev.js",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --watch-content-base --progress --mode development --config webpack.config.dev.js",
     "build": "webpack -p --progress --mode production --config webpack.config.build.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://cvgellhorn@github.com/cvgellhorn/webpack-boilerplate.git"
+    "url": "https://robertogrip@github.com/robertogrip/site-modern-layout.git"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",

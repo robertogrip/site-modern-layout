@@ -295,10 +295,38 @@ section {
                 > .row {
                     margin-top: 30px;
                 }
+                [data-tab-for] {
+                	cursor: pointer;
+                	text-align: center;
+
+                	.tab {
+                		height: 115px;
+    					overflow: hidden;
+                		border-bottom: 5px solid transparent;
+                	}
+                	
+                	&.active .tab {
+                		border-color: #fbbd5e;
+                	}
+
+                	.tab {
+                		width: 100%;
+                		max-width: 235px;
+                		display: inline-block;
+                	}
+                }
             }
+
             .featured-body {
                 background: #fff;
                 padding: 50px 80px 140px;
+                .row {
+                	display: none;
+
+               		&.active {
+               			display: flex;
+               		}
+                }
             }
         }
     }

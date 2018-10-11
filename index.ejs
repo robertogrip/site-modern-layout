@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>body { display: none; }</style>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 </head>
 <body>
@@ -38,8 +39,8 @@
             <div class="banner-mask"></div>
             <div class="row">
                 <div class="container">
-                    <h2>Lorem ipsum dolor sit amet, lorem</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lorem dui, venenatis ac elementum suscipit</p>
+                    <h2>Dê liberdade para seus usuários aprenderem todo o potencial do seu produto</h2>
+                    <p>A Conpass leva seu usuário direto ao sucesso no seu produto, criando por meio de fluxos automatizados de onboarding uma relação de confiança e integração entre usuário e software.</p>
                     <div class="call-to-action">
                         <a href="#" class="btn btn-primary btn-lg">Contate-nos</a>
                     </div>
@@ -54,21 +55,47 @@
                     <ul>
                         <li>
                             <div class="number">01</div>
-                            <p>As armas e os Barões assinalados Que da Ocident 50 al praia Lusitana</p>
+                            <p><b>Reduza custos com equipes de suporte:</b> transforme seu time de suporte em um time de sucesso do cliente</p>
                         </li>
                         <li>
-                            <div class="number">01</div>
-                            <p>As armas e os Barões assinalados Que da Ocident 50 al praia Lusitana</p>
+                            <div class="number">02</div>
+                            <p><b>Reduza tempo e custos de implantação:</b> acelere o processo com automação e fale diretamente com seu cliente</p>
                         </li>
                         <li>
-                            <div class="number">01</div>
-                            <p>As armas e os Barões assinalados Que da Ocident 50 al praia Lusitana</p>
+                            <div class="number">03</div>
+                            <p><b>Aumente o engajamento do seu software:</b> eleve a experiência do seu produto e guie seus usuários ao que eles precisam saber</p>
                         </li>
                         <li>
-                            <div class="number">01</div>
-                            <p>As armas e os Barões assinalados Que da Ocident 50 al praia Lusitana</p>
+                            <div class="number">04</div>
+                            <p><b>Torne seu produto self service:</b> dê liberdade e autonomia para o cliente final aprender sozinho na hora que ele quiser</p>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-fluid companies-use">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>MAIS DE 5 MILHÕES <span>de acessos</span></h4>
+                    </div>
+                    <div class="col-md-9">
+                        <ul class="companies">
+                            <li class="company">
+                                <img src="" alt="Company">
+                            </li>
+                            <li class="company">
+                                <img src="" alt="Company">
+                            </li>
+                            <li class="company">
+                                <img src="" alt="Company">
+                            </li>
+                            <li class="company">
+                                <img src="" alt="Company">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -77,8 +104,8 @@
             <div class="row text-center">
                 <div class="background-mask"></div>
                 <div class="col-md-12">
-                    <h2 class="light">Lorem ipsum dolor sit amet, lorem</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lorem dui, venenatis ac elementum suscipit</p>
+                    <h2 class="light">Economize tempo e dinheiro. Seu e de seus clientes</h2>
+                    <p>A Conpass melhora o engajamento e antecipa dúvidas sobre o produto em minutos. Evite perder tempo com ligações por dúvidas simples e repetitivas do seu produto. Clientes satisfeitos e equipes mais produtivas.</p>
                 </div>
             </div>
             <div class="row">
@@ -86,37 +113,65 @@
                     <div class="row">
                         <header class="featured-header">
                             <div class="row">
-                                <div class="col">
-                                    <div class="image"><img src="" alt=""></div>
-                                    <div class="description">
-                                        <h6 class="tab-title">Mais vendas</h6>
-                                        <p>As armas e os barões assinalados</p>
+                                <div class="col active" data-tab-for="product-adoption">
+                                    <div class="tab">
+                                        <div class="image"><img src="" alt=""></div>
+                                        <div class="description">
+                                            <h6 class="tab-title">Adoção do produto</h6>
+                                            <p>Adoção digital verdadeira</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="image"><img src="" alt=""></div>
-                                    <div class="description">
-                                        <h6 class="tab-title">Mais vendas</h6>
-                                        <p>As armas e os barões assinalados</p>
+                                <div class="col" data-tab-for="customer-satisfaction">
+                                    <div class="tab">
+                                        <div class="image"><img src="" alt=""></div>
+                                        <div class="description">
+                                            <h6 class="tab-title">Satisfação do cliente</h6>
+                                            <p>Clientes satisfeitos são seus melhores vendedores</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="image"><img src="" alt=""></div>
-                                    <div class="description">
-                                        <h6 class="tab-title">Mais vendas</h6>
-                                        <p>As armas e os barões assinalados</p>
+                                <div class="col" data-tab-for="retention">
+                                    <div class="tab">
+                                        <div class="image"><img src="" alt=""></div>
+                                        <div class="description">
+                                            <h6 class="tab-title">Retenção</h6>
+                                            <p>Reter clientes é até 7 vezes mais barato que conquistar novos</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </header>
                         <div class="featured-body">
-                            <div class="row">
+                            <div class="row active" data-tab-id="product-adoption">
                                 <div class="col featured-body-image">
                                     <img src="" alt="">
                                 </div>
                                 <div class="col featured-body-description">
-                                    <h4 class="light">Lorem ipsum dolor sit amet, lorem.</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, in, quod excepturi fugit enim, praesentium dolores ut distinctio veritatis omnis, ducimus laborum accusamus? Quis cumque nostrum amet temporibus, in neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad et corporis vitae excepturi pariatur, molestiae culpa quis eum quo harum, quibusdam sequi, quas, laborum voluptas animi provident a doloribus totam.</p>
+                                    <h4 class="light">Adoção digital verdadeira:</h4>
+                                    <p>Com a Conpass você educa seus usuários a entender todas as etapas e funções do seu produto. Garantindo que seus clientes terão  conhecimento profundo das funcionalidades que realmente importam para o seu dia a dia. Melhore engajamento e a satisfação do cliente!</p>
+                                    <a href="#" class="btn btn-primary">Contate-nos</a>
+                                </div>
+                            </div>
+
+                            <div class="row" data-tab-id="customer-satisfaction">
+                                <div class="col featured-body-image">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="col featured-body-description">
+                                    <h4 class="light">Clientes satisfeitos são seus melhores vendedores.</h4>
+                                    <p>A Conpass possibilita que você por meio de fluxos segmentados conduza seus clientes pelo produto sem precisar de interação humana. Cada usuário pode escolher quando iniciar um fluxo. Economize tempo, dinheiro e aumente a retenção!</p>
+                                    <a href="#" class="btn btn-primary">Contate-nos</a>
+                                </div>
+                            </div>
+
+                            <div class="row" data-tab-id="retention">
+                                <div class="col featured-body-image">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="col featured-body-description">
+                                    <h4 class="light">Reter clientes é até 7 vezes mais barato que conquistar novos.</h4>
+                                    <p>Garanta com a Conpass que seus clientes continuem engajados no seu produto e percebendo o quanto seu produto é essencial. Crie  fluxos com anúncios e orientações envolventes para apresentar novos recursos que não são usados. Continue encantando seus clientes!</p>
                                     <a href="#" class="btn btn-primary">Contate-nos</a>
                                 </div>
                             </div>
@@ -131,11 +186,11 @@
                 <div class="depoiment">
                     <div class="icon"></div>
                     <div class="description">
-                        <p>As armas e os Barões assinalados Que da Ocident 50 al praia Lusitana Por mares nunca de antes nav 100 egados Passaram ainda além da Taprobana, Em pe 150 rigos e guerras esforçados Mais do que prometi 200 a a força humana, E entre gente remota edifica 250 ram Novo.</p>
+                        <p>A Conpass é uma forma das empresas criarem uma experiência diferenciada para seus usuários e aumentarem suas taxas de conversão.</p>
                     </div>
                     <div class="user">
-                        <p class="user-name">NOME E SOBRENOME</p>
-                        <p class="company">CEO Conpass</p>
+                        <p class="user-name">BRUNO GHISI</p>
+                        <p class="company">Diretor de Tecnologia - RD</p>
                     </div>
                 </div>
             </div>
@@ -148,24 +203,24 @@
                     <div class="col">
                         <div class="frame">
                             <div class="icon"><img src="" alt=""></div>
-                            <p class="title">Lorem ipsum dolor sit amet</p>
-                            <p class="description">As armas e os Barões assinalados Que da Ocident 50 al praia Lusitana Por mares.</p>
+                            <p class="title">Aumente a permanência dos usuários no seu produto</p>
+                            <p class="description">Com o user onboarding seu usuário tem a possibilidade de conhecer todo o potencial do seu produto de forma automatizada.</p>
                             <a href="#" class="btn btn-primary">Contate-nos</a>
                         </div>
                     </div>
                     <div class="col">
                         <div class="frame">
                             <div class="icon"><img src="" alt=""></div>
-                            <p class="title">Lorem ipsum dolor sit amet</p>
-                            <p class="description">As armas e os Barões assinalados Que da Ocident 50 al praia Lusitana Por mares.</p>
+                            <p class="title">Crie sua comunicação e atualize sempre que precisar</p>
+                            <p class="description">Tenha controle total em seus fluxos. Segmente para os públicos de interesse. Crie mensagens específicas e as utilize quando quiser.</p>
                             <a href="#" class="btn btn-primary">Contate-nos</a>
                         </div>
                     </div>
                     <div class="col">
                         <div class="frame">
                             <div class="icon"><img src="" alt=""></div>
-                            <p class="title">Lorem ipsum dolor sit amet</p>
-                            <p class="description">As armas e os Barões assinalados Que da Ocident 50 al praia Lusitana Por mares.</p>
+                            <p class="title">Melhore a integração do produto com seus usuários</p>
+                            <p class="description">Seja o produto que as pessoas sempre voltam. Crie experiências de conexão eficazes que direcionam os usuários para ações importantes.</p>
                             <a href="#" class="btn btn-primary">Contate-nos</a>
                         </div>
                     </div>
