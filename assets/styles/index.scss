@@ -1,39 +1,5 @@
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/root";
-@import "~bootstrap/scss/reboot";
-@import "~bootstrap/scss/type";
-@import "~bootstrap/scss/images";
-@import "~bootstrap/scss/code";
-@import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/tables";
-@import "~bootstrap/scss/forms";
-@import "~bootstrap/scss/buttons";
-@import "~bootstrap/scss/transitions";
-@import "~bootstrap/scss/dropdown";
-@import "~bootstrap/scss/button-group";
-@import "~bootstrap/scss/input-group";
-@import "~bootstrap/scss/custom-forms";
-@import "~bootstrap/scss/nav";
-@import "~bootstrap/scss/navbar";
-@import "~bootstrap/scss/card";
-@import "~bootstrap/scss/breadcrumb";
-@import "~bootstrap/scss/pagination";
-@import "~bootstrap/scss/badge";
-@import "~bootstrap/scss/jumbotron";
-@import "~bootstrap/scss/alert";
-@import "~bootstrap/scss/progress";
-@import "~bootstrap/scss/media";
-@import "~bootstrap/scss/list-group";
-@import "~bootstrap/scss/close";
-@import "~bootstrap/scss/modal";
-@import "~bootstrap/scss/tooltip";
-@import "~bootstrap/scss/popover";
-@import "~bootstrap/scss/carousel";
-@import "~bootstrap/scss/utilities";
-@import "~bootstrap/scss/print";
-
+@import "./globals";
+@import "./bootstrap";
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -76,7 +42,7 @@ a, a:hover, a:active, a:focus, a:visited {
     background: transparent !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+span, p, h1, h2, h3, h4, h5, h6 {
     &.light {
         font-weight: 300;
     }
@@ -90,7 +56,7 @@ body {
     }
 }
 
-body > header {
+.conpass-header {
     top: 0;
     left: 0;
     color: #fff;
@@ -98,6 +64,10 @@ body > header {
     position: fixed;
     padding: 20px 40px;
     background: transparent;
+
+    .header-mobile-button {
+        display: none;
+    }
     
     .header-menu {
         margin: 0;
@@ -161,7 +131,8 @@ body > header {
 section {
     &.banner-call-to-action {
         color:#fff;
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 550px;
         position: relative;
         text-align: center;
         background: url('../images/background.jpeg') no-repeat center / cover;
@@ -193,6 +164,7 @@ section {
             padding: 0 15px;
             font-size: 24px;
             max-width: 780px;
+            font-weight: 300;
             margin: 15px auto 45px;
         }
     }
@@ -251,11 +223,60 @@ section {
                             vertical-align: middle;
                             width: calc(100% - 55px);
                         }
+
+                        b {
+                            display: none;
+                        }
                     }
                 }
             }
         }
     }
+
+    &.companies-use {
+        padding-top: 70px;
+        padding-bottom: 140px;
+
+        h4 {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 34px;
+            color: $grayColor;
+            text-align: center;
+        }
+
+        h6 {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 30px;
+            color: $blueColor;
+
+            span {
+                color: $lightColor;
+            }
+        }
+
+        .companies {
+            margin-top: 30px;
+
+            .companies-logo {
+                margin: 0;
+                padding: 20px 0;
+                text-align: center;
+
+                li {
+                    margin: 0 22px;
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    img {
+                        max-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+
     &.product-features {
         > .row:first-child {
             color: #fff;
@@ -326,10 +347,27 @@ section {
                		&.active {
                			display: flex;
                		}
+
+                    .featured-body-description {
+                        h4 {
+                            font-size: 32px;
+                            line-height: 42px;
+                            color: $grayColor;
+                            margin: 10px 0 25px;
+
+                            & + p {
+                                font-size: 16px;
+                                line-height: 28px;
+                                color: $lightColor;
+                                margin-bottom: 45px;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
+
     &.users-depoiments {
         padding-top: 80px;
         padding-bottom: 80px;
@@ -337,9 +375,18 @@ section {
             .depoiment {
                 width: 420px;
                 background: #fff;
-                padding: 100px 60px 60px;
+                padding: 70px 60px 60px;
                 border: solid 1px #d5d5d5;
                 box-shadow: 12px 23px 18px 0 rgba(0, 0, 0, 0.15);
+
+                .icon {
+                    height: 22px;
+                    font-size: 80px;
+                    line-height: 70px;
+                    text-align: center;
+                    margin-bottom: 25px;
+                    font-family: initial;
+                }
 
                 .description {
                     margin-bottom: 15px;
@@ -357,6 +404,8 @@ section {
 
                         &.user-name {
                             color: #595959;
+                            font-weight: 500;
+                            margin-bottom: 0;
                         }
                     }
                 }
@@ -384,9 +433,16 @@ section {
         }
 
         .frame {
-            padding: 30px 45px;
             background: #fff;
             text-align: center;
+            padding: 30px 45px;
+            transition: all .25s ease-in-out;
+            border-top: 8px solid transparent;
+
+            &:hover {
+                border-color: #e75b05;
+                box-shadow: 4px 6px 25px 6px rgba(0, 0, 0, 0.31);
+            }
 
             p {
                 color: #595959;
@@ -433,4 +489,38 @@ footer {
             }
         }
     }
+
+    .social-media {
+        i, svg {
+            margin-right: 7px;
+        }
+    }
+}
+
+@media screen and ( max-width: $break-xsmall ) {
+
+}
+
+@media screen and ( max-width: $break-small ) {
+
+}
+
+@media screen and ( max-width: $break-medium ) {
+
+}
+
+@media screen and ( max-width: $break-large ) {
+    .conpass-header {
+        .header-menu {
+            display: none;
+        }
+
+        .header-mobile-button {
+            display: inline-block;
+        }
+    }
+}
+
+@media screen and ( max-width: $break-xlarge ) {
+
 }
