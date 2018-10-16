@@ -34,3 +34,10 @@ jQuery('[data-tab-for]').click(event => {
 		jQuery(`[data-tab-id="${dataId}"]`).addClass('active');
 	}
 });
+
+//import images
+import '../assets/images/vtex.png';
+import '../assets/images/softplan.png';
+import '../assets/images/hostgator.png';
+import '../assets/images/logo-conpass.png';
+import '../assets/images/lojaintegrada.png';
