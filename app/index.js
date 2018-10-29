@@ -4,7 +4,7 @@ import './vendor/parallax.min';
 import jQuery from 'jquery';
 
 const showPage = () => {
-	jQuery('body').fadeIn();
+    jQuery('body').fadeIn();
 }
 
 const headerFunction = () => {
@@ -24,15 +24,15 @@ window.onload = showPage;
 window.onscroll = headerFunction;
 
 jQuery('[data-tab-for]').click(event => {
-	const dataId = jQuery(event.currentTarget).attr('data-tab-for') || '';
+    const dataId = jQuery(event.currentTarget).attr('data-tab-for') || '';
 
-	if( dataId ) {
-		jQuery('[data-tab-for]').removeClass('active');
-		jQuery(event.currentTarget).addClass('active');
+    if( dataId ) {
+        jQuery('[data-tab-for]').removeClass('active');
+        jQuery(event.currentTarget).addClass('active');
 
-		jQuery('[data-tab-id]').removeClass('active');
-		jQuery(`[data-tab-id="${dataId}"]`).addClass('active');
-	}
+	jQuery('[data-tab-id]').removeClass('active');
+	jQuery(`[data-tab-id="${dataId}"]`).addClass('active');
+    }
 });
 
 //import images
